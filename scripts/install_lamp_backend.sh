@@ -1,18 +1,12 @@
 #!/bin/bash
-
 set -ex
 
-apt update
+apt-get update
 
-apt upgrade -y
- 
-cp ../conf/000-default.conf /etc/apache2/sites-available/000-default.conf
+apt-get upgrade -y
 
-apt install mysql-server -y
+apt-get install mysql-server -y
 
-DB_USER=usuario
-DB_PASSWD=contraseña
+sed -i 's/127.0.0.1/0.0.0.0/' /etc/mysql/mysql.conf.d/mysqld.cnf
 
-mysql -u $DB_USER -p$DB_PASSWD < ../sql/database.sql
-
-chown -R www-data:www-data /var/www/html
+systemctl restart mysql
