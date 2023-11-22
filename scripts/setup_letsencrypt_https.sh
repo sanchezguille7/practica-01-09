@@ -15,6 +15,6 @@ apt remove certbot
 
 snap install --classic certbot
 
-ln -fs /snap/bin/certbot /usr/bin/certbot 
+ln -sf /snap/bin/certbot /usr/bin/certbot 
 
 certbot --apache -m $CERTIFICATE_EMAIL --agree-tos --no-eff-email -d $CERTIFICATE_DOMAIN --non-interactive
