@@ -8,8 +8,6 @@ apt upgrade -y
 
 source .env
 
-
-
 systemctl restart mysql
 
 mysql -u root <<< "DROP DATABASE IF EXISTS $WORDPRESS_DB_NAME"

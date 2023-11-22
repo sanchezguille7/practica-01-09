@@ -4,7 +4,7 @@ set -ex
 
 apt update
 
-apt upgrade -y
+#apt upgrade -y
 
 apt install apache2 -y
  
